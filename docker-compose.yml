@@ -1,16 +1,20 @@
 version: '3'
 services:
   client:
+    container_name: client
     build:
-      context: ./client
+      context: .
+      dockerfile: ./docker/client.dockerfile
     ports:
       - '3000:3000'
     depends_on:
       - server
 
   server:
+    container_name: server
     build:
-      context: ./server
+      context: .
+      dockerfile: ./docker/server.dockerfile
     ports:
       - '5000:5000'
     environment:
@@ -19,6 +23,7 @@ services:
       - mongo
 
   mongo:
+    container_name: database
     image: mongo:latest
     ports:
       - '27017:27017'
