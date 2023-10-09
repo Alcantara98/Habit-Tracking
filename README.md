@@ -47,3 +47,13 @@ To run server environment
 $ docker build -t server:latest ./server
 $ docker run -d -p 5000:5000 -name server server:latest
 ```
+To run client environment 
+```bash
+$ docker build -t client:latest ./client
+$ docker run -d -p 3000:3000 -name client client:latest
+```
+To run both client and server environment
+```bash
+$ docker-compose build
+$ docker-compose up
+```
