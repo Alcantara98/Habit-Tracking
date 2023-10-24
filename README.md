@@ -45,15 +45,19 @@ $ npm install
 To run server environment
 ```bash
 $ docker build -t server:latest ./server
-$ docker run -d -p 5000:5000 -name server server:latest
+$ docker run -d -p 5000:5000 --name server server:latest
 ```
 To run client environment 
 ```bash
 $ docker build -t client:latest ./client
-$ docker run -d -p 3000:3000 -name client client:latest
+$ docker run -d -p 3000:3000 --name client client:latest
 ```
 To run both client and server environment
 ```bash
 $ docker-compose build
 $ docker-compose up
+```
+To access mongodb
+```bash
+$ docker exec -it database mongo
 ```
