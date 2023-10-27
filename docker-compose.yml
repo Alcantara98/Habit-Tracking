@@ -22,6 +22,6 @@ services:
 
   mongo:
     container_name: database
-    image: mongo:latest
+    image: mongo:5.0
     ports:
       - '27017:27017'
